@@ -42,8 +42,9 @@ interface StateProviderProps {
 }
 
 export const StateProvider = ({ children }: StateProviderProps) => {
-  const { contract } = useContract( "0x32AdE66Dcd63bC95A3215C53BF712423550593FB"
-    // crowdfunding contract address
+  const { contract } = useContract( "0xB706b01638d56866C0905d0d706A86a5AEe662A6"
+    // crowdfunding contract address 
+    // 0xB706b01638d56866C0905d0d706A86a5AEe662A6 - OP Gorelli
   );
 
   const {

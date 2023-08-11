@@ -6,6 +6,7 @@ Cross-Chain DAO Management and Governance Reinvented with LayerZero! 💫
 
 **🔗Contracts integral to DAO:**
 
+- Crowdfunding: 0xB706b01638d56866C0905d0d706A86a5AEe662A6 Op Gorelli
 - Membership NFT on Gorelli: 
 - OmniToken(OTK) OmniGovern Governance Token: 
 - Voting Contract: 
