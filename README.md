@@ -8,7 +8,7 @@ Cross-Chain DAO Management and Governance Reinvented with LayerZero! 💫
 
 - Crowdfunding: 0xB706b01638d56866C0905d0d706A86a5AEe662A6 Op Gorelli
 - Membership NFT on Gorelli: 
-- OmniToken(OTK) OmniGovern Governance Token: 
+- OmniToken(OTK) OmniGovern Governance Token: 0xE6438eC6A31b4229a1BB90481a3ABc7B97AFc8A1 (MultiChain OFT Contract)
 - Voting Contract: 
 
 **🛠 Working:** OmniGovern, the master puppeteer, uses smart contracts to conduct the governance spectacle. Members can now propose, debate, and vote on myriad proposals. The voting contract is intimately intertwined with a Cross-chain NFT – your ticket to DAO membership. This NFT is a badge of membership and a passport enabling members to participate in the DAO's cross-chain governance.🌐🗳️
