@@ -4,6 +4,7 @@ import { ethers } from "ethers";
 import DisplayCampaigns, {
   DisplayCampaignsProps,
 } from "../components/DisplayCampaigns";
+import AuthKitDemo from "../components/Safe/AuthKit";
 import { useAppState } from "../context";
 
 const Profile = () => {
@@ -19,13 +20,16 @@ const Profile = () => {
       </div>
     );
   }
-
+console.log("i m gettign rendered ")
   return (
     <div>
       {isLoading ? (
         <Loader />
       ) : (
         <div>
+          <Title align="center" mb={20}> My Wallet</Title>
+          <AuthKitDemo />
+
           <Title align="center" mb={20}>My Campaigns</Title>
           {data.filter((item: DisplayCampaignsProps) => item.owner === address)
             .length === 0 && (

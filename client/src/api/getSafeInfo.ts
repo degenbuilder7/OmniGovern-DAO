@@ -1,7 +1,7 @@
 import axios, { RawAxiosRequestConfig } from 'axios'
 import { utils } from 'ethers'
 
-import getChain from 'src/utils/getChain'
+import getChain from '../utils/getChain'
 
 export type SafeInfoType = {
   address: string
