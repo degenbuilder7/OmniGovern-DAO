@@ -1,16 +1,15 @@
-import styled from '@emotion/styled'
-import { Theme } from '@mui/material'
-import Box from '@mui/material/Box'
+import styled from '@emotion/styled';
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography';
 
 import ConnectedWalletLabel from './ConnectWalletLabel';
 import SafeInfo from './SafeInfo'
-import { useAccountAbstraction } from '../../context/accountAbstractionContext'
+import { useAccountAbstraction } from '../../context/accountAbstractionContext';
+import Box from '@mui/material/Box';
 
 const AuthKitDemo = () => {
-  const { loginWeb3Auth, isAuthenticated, safeSelected, chainId } = useAccountAbstraction()
+  const { loginWeb3Auth, isAuthenticated, safeSelected, chainId } = useAccountAbstraction();
 
   return (
     <>
@@ -80,7 +79,7 @@ export default AuthKitDemo
 
 
 const ConnectContainer = styled(Box)<{
-  theme?: Theme
+  theme?: any
 }>(
   ({ theme }) => `
   
@@ -91,7 +90,7 @@ const ConnectContainer = styled(Box)<{
 )
 
 const ConnectedContainer = styled(Box)<{
-  theme?: Theme
+  theme? : any
 }>(
   ({ theme }) => `
   

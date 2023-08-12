@@ -2,7 +2,7 @@ import AccountAbstraction from '@safe-global/account-abstraction-kit-poc'
 import { Web3AuthModalPack } from '@safe-global/auth-kit'
 import { StripePack } from '@safe-global/onramp-kit'
 import { GelatoRelayPack } from '@safe-global/relay-kit'
-import { MetaTransactionData, MetaTransactionOptions } from '@safe-global/safe-core-sdk-types'
+import { MetaTransactionData } from '@safe-global/safe-core-sdk-types';
 import { ethers, utils } from 'ethers'
 import { createContext, useCallback, useContext, useEffect, useState } from 'react'
 
@@ -13,6 +13,12 @@ import { initialChain } from '../chains/chains'
 import usePolling from '../hooks/usePolling'
 import Chain from '../models/chain'
 import getChain from '../utils/getChain'
+
+type MetaTransactionOptions = {
+  gasLimit: string;
+  gasToken?: string;
+  isSponsored?: boolean;
+}
 
 type accountAbstractionContextValue = {
   ownerAddress?: string

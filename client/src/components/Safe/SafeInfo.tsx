@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Tooltip from '@mui/material/Tooltip'
-import { Skeleton, Theme } from '@mui/material'
+import { Skeleton } from '@mui/material'
 import styled from '@emotion/styled'
 import { providers, utils } from 'ethers'
 
@@ -113,7 +113,7 @@ function SafeInfo({ safeAddress, chainId }: SafeInfoProps) {
 export default SafeInfo
 
 const SafeSettingsLabel = styled('div')<{
-  theme?: Theme
+  theme?: any
 }>(
   ({ theme }) => `
   position: absolute;
@@ -127,7 +127,7 @@ const SafeSettingsLabel = styled('div')<{
 )
 
 const CreationPendingLabel = styled('div')<{
-  theme?: Theme
+  theme?: any
 }>(
   ({ theme }) => `
   border-radius: 4px;
@@ -138,7 +138,7 @@ const CreationPendingLabel = styled('div')<{
 )
 
 const AmountContainer = styled('div')<{
-  theme?: Theme
+  theme?: any
 }>(
   ({ theme, onClick }) => `
   border-radius: 6px;

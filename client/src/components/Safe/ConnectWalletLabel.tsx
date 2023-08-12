@@ -3,7 +3,6 @@ import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import { styled } from '@mui/material/styles'
-import { Theme } from '@mui/material'
 import LogoutIcon from '@mui/icons-material/LogoutRounded'
 
 import AddressLabel from './AddressLabel'
@@ -46,7 +45,7 @@ const StyledImg = styled('img')`
 `
 
 const LogoutIconButton = styled(IconButton)<{
-  theme?: Theme
+  theme?: any
 }>(
   ({ theme }) => `
   border: 1px solid green;
