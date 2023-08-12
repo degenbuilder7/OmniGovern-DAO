@@ -1,8 +1,5 @@
 import styled from '@emotion/styled';
 import Button from '@mui/material/Button'
-import Divider from '@mui/material/Divider'
-import Typography from '@mui/material/Typography';
-
 import ConnectedWalletLabel from './ConnectWalletLabel';
 import SafeInfo from './SafeInfo'
 import { useAccountAbstraction } from '../../context/accountAbstractionContext';
@@ -13,29 +10,27 @@ const AuthKitDemo = () => {
 
   return (
     <>
-      <Typography variant="h2" component="h1">
-        Easy Onboarding
-      </Typography>
+      <h1>Easy Onboarding</h1>
 
-      <Typography marginTop="16px">
+      <h1>
         Generate or authenticate a blockchain account using an email address, social media account,
         or traditional crypto wallets like Metamask.
-      </Typography>
+      </h1>
 
       {/* Auth Demo */}
-      <Typography variant="h4" component="h2" fontWeight="700" marginBottom="16px">
+      <h1>
         Interactive demo
-      </Typography>
+      </h1>
 
       {isAuthenticated ? (
         <Box display="flex" gap={3}>
           {/* safe Account */}
           <ConnectedContainer>
-            <Typography fontWeight="700">Safe Account</Typography>
+            <h1>Safe Account</h1>
 
-            <Typography fontSize="14px" marginTop="8px" marginBottom="32px">
+            <h1>
               Your Safe account (Smart Contract) holds and protects your assets.
-            </Typography>
+            </h1>
 
             {/* Safe Info */}
             {safeSelected && <SafeInfo safeAddress={safeSelected} chainId={chainId} />}
@@ -43,11 +38,11 @@ const AuthKitDemo = () => {
 
           {/* owner ID */}
           <ConnectedContainer>
-            <Typography fontWeight="700">Owner ID</Typography>
+            <h1>Owner ID</h1>
 
-            <Typography fontSize="14px" marginTop="8px" marginBottom="32px">
+            <h1>
               Your Owner account signs transactions to unlock your assets.
-            </Typography>
+            </h1>
 
             {/* Owner details */}
             <ConnectedWalletLabel />
@@ -55,9 +50,9 @@ const AuthKitDemo = () => {
         </Box>
       ) : (
         <ConnectContainer display="flex" flexDirection="column" alignItems="center" gap={2}>
-          <Typography variant="h4" component="h3" fontWeight="700">
+          <h1>
             Create a safe using the Auth Kit
-          </Typography>
+          </h1>
 
           <Button variant="contained" onClick={loginWeb3Auth}>
             Connect
@@ -65,11 +60,11 @@ const AuthKitDemo = () => {
         </ConnectContainer>
       )}
 
-      <Divider style={{ margin: '40px 0 30px 0' }} />
+      <br />
 
-      <Typography variant="h3" component="h2" fontWeight="700" marginBottom="16px">
+      <h1>
         How to use it
-      </Typography>
+      </h1>
 
     </>
   )
@@ -82,7 +77,6 @@ const ConnectContainer = styled(Box)<{
   theme?: any
 }>(
   ({ theme }) => `
-  
   border-radius: 10px;
   border: 1px solid white;
   padding: 50px;
@@ -93,7 +87,6 @@ const ConnectedContainer = styled(Box)<{
   theme? : any
 }>(
   ({ theme }) => `
-  
   border-radius: 10px;
   border: 1px solid white;
   padding: 40px 32px;

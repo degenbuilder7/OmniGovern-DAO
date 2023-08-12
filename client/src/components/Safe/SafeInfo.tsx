@@ -1,11 +1,10 @@
 import { useCallback, useState } from 'react'
 import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
 import Tooltip from '@mui/material/Tooltip'
 import { Skeleton } from '@mui/material'
 import styled from '@emotion/styled'
 import { providers, utils } from 'ethers'
-
+import { Theme } from '@mui/material'
 import AddressLabel from './AddressLabel'
 import AmountLabel from './AmountLabel'
 import getSafeInfo from '../../api/getSafeInfo'
@@ -13,14 +12,13 @@ import useApi from '../../hooks/useApi'
 // import safeLogoLight from '../../assets/safe-logo-light.svg'
 import usePolling from '../../hooks/usePolling'
 import { useAccountAbstraction } from '../../context/accountAbstractionContext'
+import { useTheme} from "../../context/themeContext"
 
 type SafeInfoProps = {
   safeAddress: string
   chainId: string
 }
 
-// TODO: ADD USDC LABEL
-// TODO: ADD CHAIN LABEL
 
 function SafeInfo({ safeAddress, chainId }: SafeInfoProps) {
   const { web3Provider, chain, safeBalance } = useAccountAbstraction()
@@ -50,6 +48,7 @@ function SafeInfo({ safeAddress, chainId }: SafeInfoProps) {
   const owners = safeInfo?.owners.length || 1
   const threshold = safeInfo?.threshold || 1
   const isLoading = isDeployLoading || isGetSafeInfoLoading
+  const { isDarkTheme } = useTheme();
 
   return (
     <Stack direction="row" spacing={2}>
@@ -69,27 +68,26 @@ function SafeInfo({ safeAddress, chainId }: SafeInfoProps) {
         {/* Threshold & owners label */}
         {isDeployed && (
           <SafeSettingsLabel>
-            <Typography fontSize="12px" fontWeight="700" color="inherit" lineHeight="initial">
-              {threshold}/{owners}
-            </Typography>
+            <h1 className="text-xs font-bold leading-none">{threshold}/{owners}</h1>
+
           </SafeSettingsLabel>
         )}
       </div>
 
       <Stack direction="column" spacing={0.5} alignItems="flex-start">
         {/* Safe address label */}
-        <Typography variant="body2">
+        <h1 className="text-sm">
           <AddressLabel address={safeAddress} showBlockExplorerLink />
-        </Typography>
+        </h1>
 
         {isLoading && <Skeleton variant="text" width={110} height={20} />}
 
         {!isDeployed && !isDeployLoading && (
           <CreationPendingLabel>
             <Tooltip title="This Safe is not deployed yet, it will be deployed when you execute the first transaction">
-              <Typography fontWeight="700" fontSize="12px" color="inherit">
+            <h1 className="text-xs font-bold">
                 Creation pending
-              </Typography>
+              </h1>
             </Tooltip>
           </CreationPendingLabel>
         )}
@@ -97,12 +95,12 @@ function SafeInfo({ safeAddress, chainId }: SafeInfoProps) {
         {!isLoading && (
           <AmountContainer>
             {/* Safe Balance */}
-            <Typography fontWeight="700">
+            <h1 className='font-bold'>
               <AmountLabel
                 amount={utils.formatEther(safeBalance || '0')}
                 tokenSymbol={chain?.token || ''}
               />
-            </Typography>
+            </h1>
           </AmountContainer>
         )}
       </Stack>
@@ -113,7 +111,7 @@ function SafeInfo({ safeAddress, chainId }: SafeInfoProps) {
 export default SafeInfo
 
 const SafeSettingsLabel = styled('div')<{
-  theme?: any
+  theme?: Theme
 }>(
   ({ theme }) => `
   position: absolute;
@@ -127,7 +125,7 @@ const SafeSettingsLabel = styled('div')<{
 )
 
 const CreationPendingLabel = styled('div')<{
-  theme?: any
+  theme?: Theme
 }>(
   ({ theme }) => `
   border-radius: 4px;
@@ -138,7 +136,7 @@ const CreationPendingLabel = styled('div')<{
 )
 
 const AmountContainer = styled('div')<{
-  theme?: any
+  theme?: Theme
 }>(
   ({ theme, onClick }) => `
   border-radius: 6px;

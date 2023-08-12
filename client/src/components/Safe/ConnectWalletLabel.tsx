@@ -1,5 +1,4 @@
 import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import { styled } from '@mui/material/styles'
@@ -23,9 +22,9 @@ function ConnectedWalletLabel() {
       <Stack direction="row" alignItems="center" spacing={1.5}>
         <h1>Auth Logo</h1>
 
-        <Typography variant="body2">
+        <h1>
           {ownerAddress && <AddressLabel address={ownerAddress} showBlockExplorerLink />}
-        </Typography>
+        </h1>
       </Stack>
 
       {/* logout button */}
